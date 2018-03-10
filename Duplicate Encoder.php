@@ -2,15 +2,11 @@
 
 function duplicate_encode($word){
 	$wordArr = str_split(strtolower($word));
-  $newWordArr = [];
+  $newWord = "";
   foreach ($wordArr as $key => $letter){
-    if (count(array_keys($wordArr, $letter))>1){
-      $newWordArr[] = ')';  
-    } else {
-      $newWordArr[] = '(';
-    }
+    count(array_keys($wordArr, $letter))>1 ? $newWord .= ')' : $newWord .= '(';
   }
-  return implode("",$newWordArr);
+  return $newWord;
 }
 
 /*
@@ -32,7 +28,7 @@ Examples:
 
 /*
 
-Time: 282ms Passed: 3 Failed: 0 
+Time: 293ms Passed: 3 Failed: 0 
 
 */
 
